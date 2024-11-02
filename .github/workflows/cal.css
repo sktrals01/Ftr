@@ -1,0 +1,34 @@
+table.calendar {
+	background-color: white;
+}
+
+table.calendar .cal_header_month {
+	font-weight: bold;
+	text-align: center;
+	padding: 3px;
+	padding-left: 5px;
+}
+
+table.calendar .cal_header_week {
+	/*background-color: white;*/
+}
+
+table.calendar #today {
+	padding: 0px;
+	background-color: white;
+}
+
+table.calendar .content_date
+{
+	font-weight: bold;
+}
+
+table.calendar td {
+	padding: 1px;
+	text-align: center;
+	background-color: #E4EBF8;
+}
+
+table.calendar a {
+	display: block;
+}

@@ -1,0 +1,483 @@
+Version 5.7.6
+	*Privacy Terms Generator from admin panel
+	*Script version check notification in admin panel
+	*License holder Greetings
+	*Automated Upgrade (80% Auto, 20% Manual)
+
+   Files:
+	*./admin/ptcontrol.php
+
+   Files Altered:
+	*./admin/home.php
+	*./privacy.php
+	*./terms.php
+	*./Installation Guide.pdf
+
+Version 5.7.5
+	*Site configuration management from admin panel
+	*Feature controls from admin panel
+	*New complete self automated script installation wizard
+	*Self automated script upgrading wizard
+	*Auto setup files & folders removal (enhanced security)
+	*Upgrade file included if upgrading from 5.7.1 -> v5.7.2
+	*Installation guide updated with new file name.
+	*License agreemnet updated to latest available license types.
+
+   Files:
+	*./admin/feature_control.php
+	*./admin/site_control.php
+	*./dbconnect.inc.php (available only after running setup)
+	*./Installation Guide.pdf
+	*./UPGRADE_FROM_V571.txt
+
+   Files Altered:
+	*./admin/aheader.inc.php
+	*./admin/index.php
+	*./admin/astyle.default.css
+	*./config.inc.php
+	-> Changed all variables value to database table fields
+	*./index.php
+	-> Offline message changed to a sql variable only
+	*./version.inc.php
+
+
+Version 5.7.2
+	* Security Risks Eliminated
+	* Increment of folder's security
+
+   Files Altered:
+	*common.inc.php
+	*.htaccess
+
+Version 5.7.1
+	* City filter to ad listing page has been fixed
+	* Footer file issue with different servers fixed
+	* New upgrade file added to upgrade from v5.7 -> v5.7.1
+	* Upgrade file updated with new fixes in it
+
+   Files:
+	* ads.php
+	* footer.inc.php
+	* UPGRADE_FROM_V56.txt
+	* UPGRADE_FROM_V57.txt
+
+
+Version 5.7
+    Features:
+        * Added city filter to the ad listing page.
+        * Improved search. Now searches posts for individual words from the query. Can
+          also search for multi-word matches using quotes.
+        * Now post counts displayed next to regions/cities include events as well.
+        * Links in posts now open in new windows.
+        * Incorporated some of the RSS feed recommendations.
+        * Fix: Next Day/Previous Day link in events view were not working on DST start
+          and end dates.
+        * Fix: Changes to the abuse report feature to invalidate links already indexed
+          by search engines which is causing bogus abuse reports.
+        * Fix: Uploaded pictures were, at times, displayed in reverse order.
+        * Fix: Mails sent through the contact form now has the visitor email as the
+          "From" address. Resolves issues with email clients that did not handle the
+          "Reply-To" header properly.
+        * Fix: Bad words filter was not working correctly if one of the defined
+          bad words contained a "/" character.
+        * Fix: Missing translations for months in upcoming/upcoming featured events.
+        * Fix: Broken email addresses in posts.
+        * Fix: A couple of XSS vulnerabilities.
+	* Now logo can be updated from admin panel.
+
+    Files:
+        * ads.php
+        * cities.inc.php
+        * common.inc.php
+        * config.inc.php
+            - $strict_login
+            - $word_wrap_at
+        	- line# 395-397: code to include mod_config.php
+        * db.txt
+	* footer.inc.php
+        * index.php
+        * ipn.php
+		* lorem.php
+        * LICENSE.TXT
+        * mailad.php
+        * post.php
+        * rss.php
+        * search.inc.php
+        * showad.php
+	* Software_Guide.pdf
+        * style.css
+        * upcoming_events.inc.php
+        * upcoming_featured_events.inc.php
+        * UPGRADE_FROM_V56.txt
+        * version.inc.php
+        * admin/admin.inc.php
+        * admin/ads.php
+        * admin/aheader.inc.php
+        * admin/cats.php
+        * admin/cities.php
+        * admin/index.php
+	* admin/logo.php
+        * admin/payments.php
+        * admin/regions.php
+        * admin/subcats.php
+        * editor/
+        * lang/<all>
+          Added the following phrases in all language files:
+              - $langx['lang']
+              - POSTING_FEE
+              - POSTING_FEE_NOTE
+        * setup/upgrade
+
+Version 5.6.2
+	Fixes:
+		* Major security fixes
+		* Image resizing fix
+
+	Files Altered:
+		* edit.php
+		* common.inc.php
+
+
+Version 5.6.1
+	Fixes:
+		* Page links not working when browsing directory
+		* Verification link broken when using SMTP e-mail
+		* SMTP turned off by default now unless set in config.inc.php
+	        * Integrated the paid categories mod in to the base package. Now users may be
+        	  charged for ads/event based on category and location.
+
+	Files Altered:
+		* .htaccess
+		* smtp.cls.php
+		* ads.php
+		* config.inc.php
+		* ./paid_cats/
+
+Version 5.5
+	Features:
+		* Added SMTP support for sending mails.
+		* Page links now have a structure uniform with the URL of the first page.
+		* Fix: page links for ads were not working.
+		* Fix: email attachment check was not working correctly.
+		* Fix: users were getting a blank screen after making a payment. 
+		* Fix: user names were case sensitive with the images section.
+		* Fix: IP block was not working correctly.
+		* Other minor fixes.
+		
+	Files:
+		* smtp.cls.php (new)
+		
+		* .htaccess
+		* ads.php
+		* afterpay.php
+		* common.inc.php
+		* config.inc.php
+			- $use_smtp
+			- $smtp_host
+			- $smtp_port
+			- $smtp_authenticate
+			- $smtp_username
+			- $smtp_password
+		* imgs.php
+		* ipblock.inc.php
+		* ipn.php
+		* mailad.php
+		* post.php
+		* postimg.php
+		* showad.php
+		* style.css
+		* urlbuilder.inc.php
+		* admin/ads.php
+		* lang/ar.inc.php
+
+Version 5.0
+    Features:
+        * Now supports formatting in ads.
+        * Added basic spam filter.
+        * Added mass IP block.
+        * Introducing "postable" categories and regions.
+        * Ability to shows posts from all regions. This is now the default.
+        * Added option in admin to copy custom fields from another subcategory.
+        * Added button to easily block IPs from the Manage Ads/Events page.
+        * Added Quick Views - shortcuts for commonly used searches - to 
+          ads, events, images and payments admin.
+        * Revamped the admin overview page. Also added two new stats: earnings over 
+          the week and the month.
+        * Added total amount over the selected duration to the Payment History page.
+        * Added a search all categories option.
+        * Improved the search feature with exact word matches.
+        * Added option to have moderation for ads/images.
+        * Made the posting flow more streamlined: when user is redirected to select
+          a city for posting (1) if a region is already selected, only the cities 
+          under that region are displayed, (2) if a category is already selected, 
+          selecting a city takes the user directly to the post page without having to 
+          select the category again.
+        * Added the AddThis button to post pages.
+        * Bad ad links now show a "Not found" page rather than redirecting to homepage.
+        * Each RSS feed now has a unique SEF URL and title.
+        * Browser integration of RSS feeds; supported browsers now display 
+          the feed icon in address bar.
+        * Changed behavior of $max_abuse_reports: posts exceeding this limit
+          are now automatically suspended instead of being deleted.
+        * Added Javascript confirmation for required fields in forms.
+        * "Required" custom fields.
+        * Option to change the word separator in search engine friendly URLs to "-".
+        * Integrated badword filter into image comments.
+        * Added a link back to the ad from the email ad page.
+        * Expiry date and featured till fields in admin edit page now use drop-downs.
+        * Added 'Cancel' buttons in admin.
+        * Fix: Issues with the AdBlock Plus Firefox plugin.
+        * Fix: Javascript error in the post page while posting events.
+        * Fix: Ad duration displayed incorrectly with the Italian language file.
+        * Fix: Corrected sorting of categories and locations while posting ads.
+        * Fix: Entering quotes in Language Editor (Easy Mode) causes site to
+          stop working.
+        * Fix: Pagination for search results not working properly when custom 
+          fields are present.
+        * A few more small fixes and enhancements.
+    
+    Files:
+        * post404.php (new)
+        * urlbuilder.inc.php (new)
+        * version.inc.php (new)
+        * admin/spamfilter.php (new)
+        * data/spamfilter.dat (new)
+        * editor/ (new)
+        * setup/upgrade/ (new)
+
+        * .htaccess
+        * activate.php
+        * afterpay.php
+        * ads.php
+        * cats.inc.php
+        * cities.inc.php
+        * common.inc.php
+        * config.inc.php
+          Added the following variables:
+            - $sef_word_separator
+            - $enable_richtext
+            - $richtext_since
+            - $spam_word_limit
+            - $use_regex_search
+            - $shortcut_categories
+            - $shortcut_regions
+            - $moderate_ads
+            - $moderate_events
+            - $moderate_images
+            - $datafile['spamfilter']
+            - $spam_indicator
+        * edit.php
+        * footer.inc.php
+        * header.inc.php
+        * imgcredits.inc.php
+        * imgs.php
+        * index.php
+        * initvars.inc.php
+        * ipblock.inc.php
+        * ipn.php
+        * latest.inc.php
+        * latest_featured.inc.php
+        * mailad.php
+        * main.php
+        * path.inc.php
+        * post.php
+        * postimg.php
+        * rss.php
+        * style.css
+        * search.inc.php
+        * selectcity.php
+        * showad.php
+        * showimg.php
+        * subcats.php
+        * upcoming_events.inc.php
+        * upcoming_featured_events.inc.php
+        * userauth.inc.php
+        * admin/ads.php
+        * admin/admin.inc.php
+        * admin/aheader.inc.php
+        * admin/areas.php
+        * admin/astyle.default.css
+        * admin/editad.php
+        * admin/cats.php
+        * admin/cities.php
+        * admin/home.php
+        * admin/images.php
+        * admin/ipblock.php
+        * admin/language.php
+        * admin/payments.php
+        * admin/regions.php
+        * admin/subcats.php
+        * lang/it.inc.php
+          Updated the following phrase:
+            - POST_AD_NOTE
+        * lang/<all>
+          Added/updated the following phrases in all language files:
+            - RSS_CHANNEL_TITLE
+            - UPCOMING_EVENTS
+            - UPCOMING_FEATURED_EVENTS
+            - ERROR_UPLOAD_PIC_TOO_BIG
+            - ERROR_UPLOAD_PIC_BAD_FILETYPE
+            - ERROR_UPLOAD_PIC_INTERNAL
+            - PREVIEW
+            - POST_NOT_FOUND
+            - POST_NOT_FOUND_DETAILS
+
+Version 4.97.8
+    Features:
+        * Fixed: Couple of PHP5 specific issues.
+        * Fixed: Issue with custom fields while posting.
+        * Fixed: Quotes in ad title are not rendered properly in verification mail.
+        * Change: Reply option now defaults to "use contact form" while posting.
+
+    Files:
+        * common.inc.php
+        * footer.inc.php
+        * post.php
+        * admin/admin.inc.php
+
+Version 4.97.7
+    Features:
+        * Fixed: Link to post in ads/events admin was not working.
+        * Fixed: Generated ad titles were of incorrect length after editing ad.
+        * Fixed: Fixes bug with quote characters in post/edit form.
+        * Change: Changed the way extended ad options and email options are 
+          displayed in post/edit forms, for consistency.
+        * Corrects minor formatting issues.
+
+    Files:
+        * common.inc.php
+        * edit.php
+        * footer.inc.php
+        * post.php
+        * promote.php
+        * admin/aauth.inc.php
+        * admin/admin.inc.php
+        * admin/index.php
+        * admin/editad.php
+        
+Version 4.97.6
+    Features:
+        * Fixed: link to ad in the ad response mail was not working.
+        * Fixed: language and mailtemplate admin panels were not working.
+        * Fixed: incorrect caption for the delete button in payment history. 
+        
+    Files:
+        * footer.inc.php
+        * showad.php
+        * admin/admin.inc.php
+        * admin/language.php
+        * admin/mailtemplates.php
+        * admin/payments.php
+
+Version 4.97.5
+    Features:
+        * Adds option to sort ads, events and images in admin.
+        * Adds option to delete payment history records in admin.
+        * Moved untranslated words for page links to the language file.
+        * Fixes couple of bugs with the "Reply To" form.
+        * Fixes bug with the event search in admin.
+        * Reinforces behind the scene working of the CAPTCHA making it more
+          reliable.
+        * Increases behind the scene security of admin logins.
+        * Some minor bug fixes and cosmetic changes in the admin.
+        
+    Files:
+        * captcha.cls.php
+        * captcha.png.php
+        * common.inc.php
+        * footer.inc.php
+        * initvars.inc.php
+        * pager.cls.php
+        * showad.php
+        * admin/aauth.inc.php
+        * admin/admin.inc.php
+        * admin/ads.php
+        * admin/editad.php
+        * admin/images.php
+        * admin/index.php
+        * admin/mailtemplates.php
+        * admin/payments.php
+        * admin/postad.php
+        * lang/cn-simplified.inc.php
+        * lang/en.inc.php
+        * lang/es.inc.php
+        * lang/fr.inc.php
+        * lang/it.inc.php
+
+Version 4.97.4
+    Features:
+        * Resolves issue with "Reply to" mails not being sent. 
+        * Now specifies correct MIME type for email attachments; improves 
+          reliability.
+        * Image extensions set in the config are now case-insensitive.
+        * Reinforces security against variable injections.
+        
+    Files:
+        * common.inc.php
+        * footer.inc.php
+        * initvars.inc.php
+        * showad.php
+        * admin/admin.inc.php
+        * adpics/.htaccess
+        * userimgs/.htaccess
+
+Version 4.97.3
+    Features:
+        * Fixes hole that could be used for email injection.
+        * More reliable method for sending mails with attachment.
+        * Ad is automatically extended if its featured beyond the end date.
+        * Page refresh does not post the same image again and again.
+        * Now uses file extensions to identify image type in order to avoid 
+          browser incompatibilities.
+        * Fixes issues with the RSS feed.
+        * Minor changes to the admin area.
+        
+    Files:
+        * config.inc.php
+            * Added variable $image_extensions
+        * common.inc.php
+        * ipn.php
+        * post.php
+        * postimg.php
+        * rss.php
+        * showad.php
+        * admin/ads.php
+        * admin/images.php
+        
+Version 4.97.2
+    * admin/admin.inc.php
+    * admin/ads.php
+    * admin/language.php
+    * common.inc.php
+    * initvars.inc.php
+    * ipblock.inc.php
+    * mailcheck.php (Deleted)
+    * postimg.php
+    * server_check.php (Deleted)
+
+Version 4.97.1
+    * cancelpay.php
+
+Version 4.97
+    * common.inc.php
+    * config.inc.php
+    * initvars.inc.php
+    * ads.php
+    * edit.php
+    * post.php
+    * admin/admin.inc.php
+    * admin/ads.php
+    * admin/afooter.inc.php
+    * admin/aheader.inc.php
+    * admin/editad.php
+    * cron/cleanup.php
+
+Version 4.96.6
+    * ads.php
+
+Version 4.96.2
+    * showad.php
+
+Version 4.96.1
+    * mailad.php
+    * search.inc.php
